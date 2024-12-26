@@ -18,12 +18,12 @@ def test_table_search():
         search_box.send_keys("New York")
         time.sleep(2)
 
-        result_rows = driver.find_elements(By.CSS_SELECTOR, "#results-table tbody tr")  # Replace with actual locator
+        result_rows = driver.find_elements(By.CSS_SELECTOR, "#results-table tbody tr")  
         visible_rows = [row for row in result_rows if row.is_displayed()]
 
         assert len(visible_rows) == 5, f"Expected 5 entries, but found {len(visible_rows)}"
 
-        total_entries_text = driver.find_element(By.ID, "total-entries")  # Replace with actual ID or locator
+        total_entries_text = driver.find_element(By.ID, "total-entries")  
         assert "24 total entries" in total_entries_text.text, "Total entries count does not match expected value"
 
         print("Test passed: Search results are correctly displayed!")
